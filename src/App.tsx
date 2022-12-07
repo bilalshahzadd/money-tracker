@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Topbar />
-      <Nav heading="Expensify" background={background} color={textColor} />
+      <Nav heading="Expensify" background={background} textColor={textColor} />
       <Main />
     </>
   );
