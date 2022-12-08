@@ -26,31 +26,8 @@ export const Main = () => {
         setExtras(event.target.valueAsNumber);
     }
 
-    const saveInformation = () => {
-        const data = {
-            income: income,
-            houseExpense: houseExpense,
-            travelExpense: travelExpense,
-            extras: extras,
-            totalExpense: totalExpense,
-            totalSavings: totalSavings
-        }
-
-        localStorage.setItem('items', JSON.stringify(data));
-    }
-
-    const fetchInformation = () => {
-        const items = localStorage.getItem('items');
-        const convertedItem = JSON.stringify(items);
-        const itemObj = JSON.parse(convertedItem);
-        console.log(itemObj);
-    }
-
-    fetchInformation();
-
     return (
         <>
-
             <div className="w-full border-[#121212] bg-[#282c34] h-[520px] flex justify-evenly max-[600px]:pt-3 max-[600px]:flex-col max-[600px]:h-auto">
                 <div className="w-5/12 border-2 border-[#f2f2f2] rounded-[8px] h-[27rem] mt-10 p-5 max-[600px]:w-11/12 max-[600px]:m-auto">
                     <div className="flex flex-col gap-2 text-[#f2f2f2]">
@@ -105,9 +82,6 @@ export const Main = () => {
                         <div className="flex gap-2 items-center">
                             <p className="text-xl font-bold">Total Saving:</p>
                             <p className="text-l font-semibold">${!totalSavings ? " " : totalSavings}<span className="text-[#FF0000]">{totalExpense > income ? " You are in debt" : " "}</span></p>
-                        </div>
-                        <div className="flex gap-2 items-center">
-                            <button className="border-2 border-[#f2f2f2] rounded-[5px] bg-[#f2f2f2] text-[#282c34] py-[5px] px-[40px]" onClick={saveInformation}>Save Information</button>
                         </div>
                     </div>
                 </div>
