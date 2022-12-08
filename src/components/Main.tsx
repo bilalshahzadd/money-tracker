@@ -40,8 +40,9 @@ export const Main = () => {
     }
 
     const fetchInformation = () => {
-        const data = localStorage.getItem('items');
-        const convertedString = JSON.stringify(data);
+        const items = localStorage.getItem('items');
+        const convertedString = JSON.stringify(items);
+        console.log(convertedString);
     }
 
     fetchInformation();
