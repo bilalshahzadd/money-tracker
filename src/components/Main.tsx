@@ -41,8 +41,9 @@ export const Main = () => {
 
     const fetchInformation = () => {
         const items = localStorage.getItem('items');
-        const convertedString = JSON.stringify(items);
-        console.log(convertedString);
+        const convertedItem = JSON.stringify(items);
+        const itemObj = JSON.parse(convertedItem);
+        console.log(itemObj);
     }
 
     fetchInformation();
@@ -55,22 +56,22 @@ export const Main = () => {
                     <div className="flex flex-col gap-2 text-[#f2f2f2]">
                         <h2 className="text-3xl font-bold">Make Your Budget</h2>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="salary" className="font-bold">Your Monthly Income:</label>
+                            <p className="font-bold">Your Monthly Income:</p>
                             <div className="currency-wrap">
                                 <span className="currency-code">$</span>
                                 <input type="number" className="text-currency" value={income} onChange={takeIncome} />
                             </div>
-                            <label htmlFor="salary" className="font-bold">Your Household Expenses:</label>
+                            <p className="font-bold">Your Household Expenses:</p>
                             <div className="currency-wrap">
                                 <span className="currency-code">$</span>
                                 <input type="number" className="text-currency" value={houseExpense} onChange={takeHouseExpense} />
                             </div>
-                            <label htmlFor="salary" className="font-bold">Your Traveling Expenses:</label>
+                            <p className="font-bold">Your Traveling Expenses:</p>
                             <div className="currency-wrap">
                                 <span className="currency-code">$</span>
                                 <input type="number" className="text-currency" value={travelExpense} onChange={takeTravelExpense} />
                             </div>
-                            <label htmlFor="salary" className="font-bold">Extras:</label>
+                            <p className="font-bold">Extras:</p>
                             <div className="currency-wrap">
                                 <span className="currency-code">$</span>
                                 <input type="number" className="text-currency" value={extras} onChange={takeExtras} />
